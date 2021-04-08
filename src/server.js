@@ -4,4 +4,4 @@ const { Pandemic } = require('./Game');
 
 const server = Server({ games: [Pandemic] });
 
-server.run(4000);
+server.run(process.env.PORT);
