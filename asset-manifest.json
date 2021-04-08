@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kings-dilemma/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/kings-dilemma/static/js/main.959592c3.chunk.js",
-    "main.js.map": "/kings-dilemma/static/js/main.959592c3.chunk.js.map",
+    "main.js": "/kings-dilemma/static/js/main.bf234cc5.chunk.js",
+    "main.js.map": "/kings-dilemma/static/js/main.bf234cc5.chunk.js.map",
     "runtime-main.js": "/kings-dilemma/static/js/runtime-main.523b3630.js",
     "runtime-main.js.map": "/kings-dilemma/static/js/runtime-main.523b3630.js.map",
     "static/js/2.08cc32e6.chunk.js": "/kings-dilemma/static/js/2.08cc32e6.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.523b3630.js",
     "static/js/2.08cc32e6.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.959592c3.chunk.js"
+    "static/js/main.bf234cc5.chunk.js"
   ]
 }
