@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/kings-dilemma/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/kings-dilemma/static/js/main.959592c3.chunk.js",
+    "main.js.map": "/kings-dilemma/static/js/main.959592c3.chunk.js.map",
+    "runtime-main.js": "/kings-dilemma/static/js/runtime-main.523b3630.js",
+    "runtime-main.js.map": "/kings-dilemma/static/js/runtime-main.523b3630.js.map",
+    "static/js/2.08cc32e6.chunk.js": "/kings-dilemma/static/js/2.08cc32e6.chunk.js",
+    "static/js/2.08cc32e6.chunk.js.map": "/kings-dilemma/static/js/2.08cc32e6.chunk.js.map",
+    "static/js/3.2d90e35e.chunk.js": "/kings-dilemma/static/js/3.2d90e35e.chunk.js",
+    "static/js/3.2d90e35e.chunk.js.map": "/kings-dilemma/static/js/3.2d90e35e.chunk.js.map",
+    "index.html": "/kings-dilemma/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/kings-dilemma/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.08cc32e6.chunk.js.LICENSE.txt": "/kings-dilemma/static/js/2.08cc32e6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.523b3630.js",
+    "static/js/2.08cc32e6.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.959592c3.chunk.js"
+  ]
+}
