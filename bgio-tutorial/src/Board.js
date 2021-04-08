@@ -1,8 +1,8 @@
 import React from 'react';
 
-export class TicTacToeBoard extends React.Component {
+export class PandemicBoard extends React.Component {
   onClick(id) {
-    this.props.moves.clickCell(id);
+    this.props.moves.addAgent(id);
   }
 
   render() {
@@ -18,24 +18,31 @@ export class TicTacToeBoard extends React.Component {
 
     const cellStyle = {
       border: '1px solid #555',
-      width: '50px',
-      height: '50px',
+      width: '100px',
+      height: '100px',
       lineHeight: '50px',
       textAlign: 'center',
     };
 
+    let cityNames = Object.keys(this.props.G.cities);
+
+    let regions = {1: [], 2: [], 3: [], 4:[], 5: [], 6:[]};
+    for (let i = 0; i < cityNames.length; i++) {
+      let myName = cityNames[i];
+      let myRegion = this.props.G.cities[myName].region;
+      regions[myRegion].push(
+        <td style={cellStyle} key={myName} onClick={() => this.onClick(myName)}>
+          {this.props.G.cities[myName].name}
+          <br/>
+          Agents: {this.props.G.cities[myName].agents}
+        </td>
+      );
+    }
+
     let tbody = [];
-    for (let i = 0; i < 3; i++) {
-      let cells = [];
-      for (let j = 0; j < 3; j++) {
-        const id = 3 * i + j;
-        cells.push(
-          <td style={cellStyle} key={id} onClick={() => this.onClick(id)}>
-            {this.props.G.cells[id]}
-          </td>
-        );
-      }
-      tbody.push(<tr key={i}>{cells}</tr>);
+
+    for (let i = 1; i <= 6; i++) {
+      tbody.push(<tr key={'region-' + i}>{regions[i]}</tr>);
     }
 
     return (
