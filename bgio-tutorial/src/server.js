@@ -4,4 +4,4 @@ const { Pandemic } = require('./Game');
 
 const server = Server({ games: [Pandemic] });
 
-server.run(8000);
+server.run(4000);
