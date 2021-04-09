@@ -49,6 +49,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '470px',
+          left: '95px',
         },
         toronto: {
           name: "Toronto",
@@ -58,6 +60,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '456px',
+          left: '311px',
         },
         newYork: {
           name: "New York",
@@ -67,6 +71,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '443px',
+          left: '495px',
         },
         losAngeles: {
           name: "Los Angeles",
@@ -76,6 +82,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '581px',
+          left: '81px',
         },
         atlanta: {
           name: "Atlanta",
@@ -85,6 +93,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '580px',
+          left: '320px',
         },
         washington: {
           name: "Washington",
@@ -94,6 +104,8 @@ export const Pandemic = {
           safehouse: true,
           agents: 0,
           target: null,
+          top: '534px',
+          left: '485px',
         },
         mexicoCity: {
           name: "Mexico City",
@@ -103,6 +115,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '682px',
+          left: '245px',
         },
         havana: {
           name: "Havana",
@@ -112,6 +126,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '675px',
+          left: '427px',
         },
         bogota: {
           name: "Bogota",
@@ -121,6 +137,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '823px',
+          left: '435px',
         },
         lima: {
           name: "Lima",
@@ -130,6 +148,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '982px',
+          left: '420px',
         },
         saoPaolo: {
           name: "Sao Paolo",
@@ -139,6 +159,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '1029px',
+          left: '592px',
         },
         santiago: {
           name: "Santiago",
@@ -148,6 +170,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '1155px',
+          left: '396px',
         },
         buenosAires: {
           name: "Buenos Aires",
@@ -157,6 +181,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '1151px',
+          left: '531px',
         },
         madrid: {
           name: "Madrid",
@@ -166,6 +192,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '533px',
+          left: '788px',
         },
         london: {
           name: "London",
@@ -175,6 +203,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '395px',
+          left: '837px',
         },
         rome: {
           name: "Rome",
@@ -184,6 +214,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '537px',
+          left: '1044px',
         },
         istanbul: {
           name: "Istanbul",
@@ -193,6 +225,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '515px',
+          left: '1160px',
         },
         paris: {
           name: "Paris",
@@ -202,6 +236,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '516px',
+          left: '923px',
         },
         eastBerlin: {
           name: "East Berlin",
@@ -211,6 +247,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '410px',
+          left: '1000px',
         },
         prague: {
           name: "Prague",
@@ -220,6 +258,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '412px',
+          left: '1152px',
         },
         kiev: {
           name: "Kiev",
@@ -229,6 +269,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '381px',
+          left: '1282px',
         },
         warsaw: {
           name: "Warsaw",
@@ -238,6 +280,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '285px',
+          left: '1053px',
         },
         leningrad: {
           name: "Leningrad",
@@ -247,15 +291,19 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '246px',
+          left: '1207px',
         },
         moscow: {
-          name: "East Berlin",
+          name: "Moscow",
           region: REGION.EUROPE,
           affiliation: AFFILIATION.SOVIET,
           surveillance: 3,
           safehouse: false,
           agents: 0,
           target: null,
+          top: '305px',
+          left: '1416px',
         },
         cairo: {
           name: "Cairo",
@@ -265,6 +313,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '677px',
+          left: '1126px',
         },
         algiers: {
           name: "Algiers",
@@ -274,6 +324,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '674px',
+          left: '957px',
         },
         johannesburg: {
           name: "Johannesburg",
@@ -283,6 +335,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '1044px',
+          left: '1102px',
         },
         leopoldville: {
           name: "Leopoldville",
@@ -292,6 +346,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '890px',
+          left: '1024px',
         },
         lagos: {
           name: "Lagos",
@@ -301,6 +357,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '792px',
+          left: '875px',
         },
         khartoum: {
           name: "Khartoum",
@@ -310,6 +368,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '808px',
+          left: '1188px',
         },
         riyadh: {
           name: "Riyadh",
@@ -319,6 +379,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '687px',
+          left: '1305px',
         },
         karachi: {
           name: "Karachi",
@@ -328,6 +390,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '558px',
+          left: '1411px',
         },
         delhi: {
           name: "Delhi",
@@ -337,6 +401,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '483px',
+          left: '1522px',
         },
         calcutta: {
           name: "Calcutta",
@@ -346,6 +412,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '677px',
+          left: '1521px',
         },
         bombay: {
           name: "Bombay",
@@ -355,6 +423,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '768px',
+          left: '1415px',
         },
         bangkok: {
           name: "Bangkok",
@@ -364,6 +434,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '783px',
+          left: '1610px',
         },
         baghdad: {
           name: "Baghdad",
@@ -373,6 +445,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '566px',
+          left: '1297px',
         },
         novosibirsk: {
           name: "Novosibirsk",
@@ -382,6 +456,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '363px',
+          left: '1535px',
         },
         peking: {
           name: "Peking",
@@ -391,6 +467,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '431px',
+          left: '1677px',
         },
         pyongyang: {
           name: "Pyongyang",
@@ -400,6 +478,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '454px',
+          left: '1822px',
         },
         shanghai: {
           name: "Shanghai",
@@ -409,6 +489,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '566px',
+          left: '1753px',
         },
         handi: {
           name: "Handi",
@@ -418,6 +500,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '577px',
+          left: '1613px',
         },
         saigon: {
           name: "Saigon",
@@ -427,6 +511,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '694px',
+          left: '1752px',
         },
         sydney: {
           name: "Sydney",
@@ -436,6 +522,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          left: '1945px',
+          top: '1148px',
         },
         jakarta: {
           name: "Jakarta",
@@ -445,6 +533,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          left: '1647px',
+          top: '939px',
         },
         manila: {
           name: "Manila",
@@ -454,6 +544,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          left: '1805px',
+          top: '891px',
         },
         osaka: {
           name: "Osaka",
@@ -463,6 +555,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          left: '1946px',
+          top: '579px',
         },
         tokyo: {
           name: "Tokyo",
@@ -472,6 +566,8 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          top: '490px',
+          left: '1940px',
         },
       }
     }
