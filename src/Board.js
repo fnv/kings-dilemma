@@ -109,7 +109,7 @@ export class PandemicBoard extends React.Component {
     </div>);
 
     return (
-      <div style={{'width':'2074px','height':'1306px','backgroundImage':'url(https://lh3.googleusercontent.com/ggFmwOgjqmmtEM_OsEhCUDBAVOVOoYJWyQXRImYhSQ_64cZMaLvV9iMATWtUIbsj81t4P9XqMqY7T_qbdI2HcBp1Oxvz5dNLNIiuVgMAp6BG-zIsUSRU3rqJGhMyFHwOvy2Y6UFcS2oNyg0G0VGvVZqxUddJAV2wgouk6gSrPO9cSxt1Jr7Oi1Vj3pqEeooXTkuWka9eoM2hNDp27J38hKHf-PMLyAHZdYL-oQ7Kjv3B1QIPqqV1cMjqAO5b-4VOgNcI6lPl8EPDf2Cu6taPrrnfb4wDl-TQteZqNp_kbGDYXuol2cOPIfLixC5rGa7_blHZ2KrwMbQiqf3qE10HYShhRS-d-0xo_YvEbMyD1eBDOzt3LCCii2lcNgaFxap5KWKQt5bzoOPZQ1VLz89wnU3a4iKRawtt25cB62pAmoiiW9f1NKIpe6Cct8aWTSp2ebMqF0hBV5JkqWK47y6lzTYNWbSNQ67IRc6ucgWOdQULvsfIIePlxIo3MXT_MI5GAJcGdxSX9mQ2jw7fPu5p0N0YRXy-V0ifwjVwfvoT077mG3oBrgDKf0SSIvwPvc4TeZGA3sz-lEAtPrrPWzCgqqXNv6Kv4N5fZ3DE-bKtyJunTIZQq91rCmXXEhPbFBajXx6n543TaPqmF9lX2vx3DDM8CZiZI7exL3xhY8bcvT_1kn1ScsQ-s0V74yu5JOnbnx_LG-JmopST2PaHPgSS2H9Efg=w2074-h1306-no?authuser=0)'}}>
+      <div style={{'width':'2074px','height':'1306px','backgroundImage':'url('+process.env.PUBLIC_URL+'/pandemicmap.jpeg)'}}>
         {actions}
         {div}
         {winner}
