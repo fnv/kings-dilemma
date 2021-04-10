@@ -49,6 +49,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '470px',
           left: '95px',
         },
@@ -60,6 +61,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '456px',
           left: '311px',
         },
@@ -71,6 +73,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '443px',
           left: '495px',
         },
@@ -82,6 +85,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '581px',
           left: '81px',
         },
@@ -93,6 +97,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '580px',
           left: '320px',
         },
@@ -104,6 +109,7 @@ export const Pandemic = {
           safehouse: true,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '534px',
           left: '485px',
         },
@@ -115,6 +121,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '682px',
           left: '245px',
         },
@@ -126,6 +133,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '675px',
           left: '427px',
         },
@@ -137,6 +145,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '823px',
           left: '435px',
         },
@@ -148,6 +157,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '982px',
           left: '420px',
         },
@@ -159,6 +169,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '1029px',
           left: '592px',
         },
@@ -170,6 +181,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '1155px',
           left: '396px',
         },
@@ -181,6 +193,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '1151px',
           left: '531px',
         },
@@ -192,6 +205,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '533px',
           left: '788px',
         },
@@ -203,6 +217,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '395px',
           left: '837px',
         },
@@ -214,6 +229,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '537px',
           left: '1044px',
         },
@@ -225,6 +241,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '515px',
           left: '1160px',
         },
@@ -236,6 +253,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '516px',
           left: '923px',
         },
@@ -247,6 +265,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '410px',
           left: '1000px',
         },
@@ -258,6 +277,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '412px',
           left: '1152px',
         },
@@ -269,6 +289,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '381px',
           left: '1282px',
         },
@@ -280,6 +301,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '285px',
           left: '1053px',
         },
@@ -291,6 +313,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '246px',
           left: '1207px',
         },
@@ -302,6 +325,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '305px',
           left: '1416px',
         },
@@ -313,6 +337,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '677px',
           left: '1126px',
         },
@@ -324,6 +349,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '674px',
           left: '957px',
         },
@@ -335,6 +361,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '1044px',
           left: '1102px',
         },
@@ -346,6 +373,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '890px',
           left: '1024px',
         },
@@ -357,6 +385,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '792px',
           left: '875px',
         },
@@ -368,6 +397,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '808px',
           left: '1188px',
         },
@@ -379,6 +409,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '687px',
           left: '1305px',
         },
@@ -390,6 +421,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '558px',
           left: '1411px',
         },
@@ -401,6 +433,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '483px',
           left: '1522px',
         },
@@ -412,6 +445,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '677px',
           left: '1521px',
         },
@@ -423,6 +457,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '768px',
           left: '1415px',
         },
@@ -434,6 +469,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '783px',
           left: '1610px',
         },
@@ -445,6 +481,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '566px',
           left: '1297px',
         },
@@ -456,6 +493,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '363px',
           left: '1535px',
         },
@@ -467,6 +505,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '431px',
           left: '1677px',
         },
@@ -478,6 +517,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '454px',
           left: '1822px',
         },
@@ -489,6 +529,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '566px',
           left: '1753px',
         },
@@ -500,6 +541,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '577px',
           left: '1613px',
         },
@@ -511,6 +553,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '694px',
           left: '1752px',
         },
@@ -522,6 +565,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           left: '1945px',
           top: '1148px',
         },
@@ -533,6 +577,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           left: '1647px',
           top: '939px',
         },
@@ -544,6 +589,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           left: '1805px',
           top: '891px',
         },
@@ -555,6 +601,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           left: '1946px',
           top: '579px',
         },
@@ -566,6 +613,7 @@ export const Pandemic = {
           safehouse: false,
           agents: 0,
           target: null,
+          incidents: 0,
           top: '490px',
           left: '1940px',
         },
@@ -615,6 +663,21 @@ export const Pandemic = {
       }
       G.cities[cityId].safehouse = !G.cities[cityId].safehouse;
     },
+    toggleTarget: (G, ctx, cityId) => {
+      if (!G.cities[cityId]) {
+        return INVALID_MOVE;
+      }
+      if (G.cities[cityId].target === null) {
+        G.cities[cityId].target = TARGET.CONFIRMED;
+        return;
+      } else if (G.cities[cityId].target === TARGET.CONFIRMED) {
+        G.cities[cityId].target = TARGET.ELIMINATED;
+        return;
+      } else if (G.cities[cityId].target === TARGET.ELIMINATED) {
+        G.cities[cityId].target = null;
+        return;
+      }
+    },
     addAgent: (G, ctx, cityId) => {
       if (!G.cities[cityId]) {
         return INVALID_MOVE;
@@ -627,6 +690,28 @@ export const Pandemic = {
       }
       G.cities[cityId].agents = Math.max(G.cities[cityId].agents - 1, 0);
     },
+    addIncident: (G, ctx, cityId) => {
+      if (!G.cities[cityId]) {
+        return INVALID_MOVE;
+      }
+      G.cities[cityId].incidents = G.cities[cityId].incidents + 1;
+    },
+    removeIncident: (G, ctx, cityId) => {
+      if (!G.cities[cityId]) {
+        return INVALID_MOVE;
+      }
+      G.cities[cityId].incidents = Math.max(G.cities[cityId].incidents - 1, 0);
+    },
+    moveTeam: (G, ctx, cityId, teamId) => {
+      if (cityId === null) {
+        G.teams[teamId] = null;
+        return;
+      }
+      if (!G.cities[cityId]) {
+        return INVALID_MOVE;
+      }
+      G.teams[teamId] = cityId;      
+    },
   },
 
   endIf: (G, ctx) => {
@@ -637,5 +722,6 @@ export const Pandemic = {
     // if (IsDraw(G.cells)) {
     //   return { draw: true };
     // }
+    // total agents, total incidents!!!
   },
 };

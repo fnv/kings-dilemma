@@ -5,6 +5,7 @@ import { GiMeeple, GiOutbackHat, GiCaravan, GiTargeting, GiCancel, GiHouse } fro
 export class PandemicBoard extends React.Component {
 
   action = 'add'
+  team = null
 
   setAction(action) {
     this.action = action;
@@ -32,6 +33,58 @@ export class PandemicBoard extends React.Component {
     }
     if (move === 'safehouse') {
       this.props.moves.toggleSafehouse(city);
+    }
+    if (move === 'target') {
+      this.props.moves.toggleTarget(city);
+    }
+    if (move === 'addIncident') {
+      this.props.moves.addIncident(city);
+    }
+    if (move === 'removeIncident') {
+      this.props.moves.removeIncident(city);
+    }
+    if (move === 'createAllied') {
+      this.team = 'alliedTeam1';
+      this.props.moves.moveTeam(city, this.team);
+    }
+    if (move === 'createNeutral') {
+      this.team = 'neutralTeam1';
+      this.props.moves.moveTeam(city, this.team);
+    }
+    if (move === 'createSoviet') {
+      this.team = 'sovietTeam1';
+      this.props.moves.moveTeam(city, this.team);
+    }
+    if (move === 'createAllied2') {
+      this.team = 'alliedTeam2';
+      this.props.moves.moveTeam(city, this.team);
+    }
+    if (move === 'createNeutral2') {
+      this.team = 'neutralTeam2';
+      this.props.moves.moveTeam(city, this.team);
+    }
+    if (move === 'createSoviet2') {
+      this.team = 'sovietTeam2';
+      this.props.moves.moveTeam(city, this.team);
+    }
+    if (move === 'createAllied3') {
+      this.team = 'alliedTeam3';
+      this.props.moves.moveTeam(city, this.team);
+    }
+    if (move === 'createNeutral3') {
+      this.team = 'neutralTeam3';
+      this.props.moves.moveTeam(city, this.team);
+    }
+    if (move === 'createSoviet3') {
+      this.team = 'sovietTeam3';
+      this.props.moves.moveTeam(city, this.team);
+    }
+    if (move === 'removeTeam') {
+      // search teams and set first matching city to null
+      let found = Object.keys(this.props.G.teams).find((team) => {if (this.props.G.teams[team] === city) {return team} return null})
+      if (found) {
+        this.props.moves.moveTeam(null, found);
+      }
     }
   }
 
@@ -71,16 +124,30 @@ export class PandemicBoard extends React.Component {
           {(this.props.G.pawns.pinkPawn===myName) ? (<GiMeeple color='pink' size='1.5em' style={{'border':'2px solid pink', 'background': 'rgba(0, 0, 0, 0.45)'}}/>) : ''}
           {(this.props.G.pawns.whitePawn===myName) ? (<GiMeeple color='white' size='1.5em' style={{'border':'2px solid white', 'background': 'rgba(0, 0, 0, 0.45)'}}/>) : ''}
           {(this.props.G.pawns.blackPawn===myName) ? (<GiMeeple color='black' size='1.5em' style={{'border':'2px solid black', 'background': 'rgba(256, 256, 256, 0.45)'}}/>) : ''}
+          {(this.props.G.teams.alliedTeam1===myName) ? (<GiCaravan color='lightBlue' size='1.5em' style={{'border':'2px solid lightBlue', 'borderRadius':'24px', 'background': 'rgba(0, 0, 0, 0.65)'}}/>) : ''}
+          {(this.props.G.teams.alliedTeam2===myName) ? (<GiCaravan color='lightBlue' size='1.5em' style={{'border':'2px solid lightBlue', 'borderRadius':'24px', 'background': 'rgba(0, 0, 0, 0.65)'}}/>) : ''}
+          {(this.props.G.teams.alliedTeam3===myName) ? (<GiCaravan color='lightBlue' size='1.5em' style={{'border':'2px solid lightBlue', 'borderRadius':'24px', 'background': 'rgba(0, 0, 0, 0.65)'}}/>) : ''}
+          {(this.props.G.teams.neutralTeam1===myName) ? (<GiCaravan color='gray' size='1.5em' style={{'border':'2px solid gray', 'borderRadius':'24px', 'background': 'rgba(0, 0, 0, 0.65)'}}/>) : ''}
+          {(this.props.G.teams.neutralTeam2===myName) ? (<GiCaravan color='gray' size='1.5em' style={{'border':'2px solid gray', 'borderRadius':'24px', 'background': 'rgba(0, 0, 0, 0.65)'}}/>) : ''}
+          {(this.props.G.teams.neutralTeam3===myName) ? (<GiCaravan color='gray' size='1.5em' style={{'border':'2px solid gray', 'borderRadius':'24px', 'background': 'rgba(0, 0, 0, 0.65)'}}/>) : ''}
+          {(this.props.G.teams.sovietTeam1===myName) ? (<GiCaravan color='red' size='1.5em' style={{'border':'2px solid red', 'borderRadius':'24px', 'background': 'rgba(0, 0, 0, 0.65)'}}/>) : ''}
+          {(this.props.G.teams.sovietTeam2===myName) ? (<GiCaravan color='red' size='1.5em' style={{'border':'2px solid red', 'borderRadius':'24px', 'background': 'rgba(0, 0, 0, 0.65)'}}/>) : ''}
+          {(this.props.G.teams.sovietTeam3===myName) ? (<GiCaravan color='red' size='1.5em' style={{'border':'2px solid red', 'borderRadius':'24px', 'background': 'rgba(0, 0, 0, 0.65)'}}/>) : ''}
           <br/>
+          {Array(this.props.G.cities[myName].incidents).fill(0).map((_, index) => <span key={'incident-'+index} style={{fontSize: '40px', color: 'red'}}><b>!</b></span>)}
           {Array(this.props.G.cities[myName].agents).fill(0).map((_, index) => <GiOutbackHat key={'hat-'+index} color='red' size='1.5em' />)}
           <br/>
-          
-          {/* <GiCaravan color='blue' size='2em'/>
-          <GiTargeting color='red' size='2em'/>
-          <GiCancel color='gray' size='2em'/> */}
+          {(this.props.G.cities[myName].target === 1) ? (<GiTargeting color='red' size='2.5em' style={{'border':'2px solid white', 'background': 'rgba(256, 256, 256, 0.45)'}}/>) : ''}
+          {(this.props.G.cities[myName].target === 2) ? (<GiCancel color='gray' size='2.5em' style={{'border':'2px solid white', 'background': 'rgba(256, 256, 256, 0.45)'}}/>) : ''}
         </div>
       );
     }
+
+
+    let summer = (acc, cur) => acc + cur;
+    let totalIncidents = Object.keys(this.props.G.cities).map((city) => this.props.G.cities[city].incidents).reduce(summer);
+    let totalAgents = Object.keys(this.props.G.cities).map((city) => this.props.G.cities[city].agents).reduce(summer);
+
 
     let div = [];
 
@@ -90,8 +157,8 @@ export class PandemicBoard extends React.Component {
 
     let actions = (<div style={{
       border: '1px solid #555',
-      width: '180px',
-      height: '210px',
+      width: '1150px',
+      height: '160px',
       lineHeight: '28px',
       textAlign: 'center',
       background: 'rgba(256, 256, 256, 0.65)',
@@ -99,15 +166,103 @@ export class PandemicBoard extends React.Component {
       top: '55px',
       left: '25px'
     }}>
-      <span onClick={() => this.setAction('add')}>ADD AGENT</span><br/>
-      <span onClick={() => this.setAction('remove')}>REMOVE AGENT</span><br/>
-      <span onClick={() => this.setAction('blue')}>MOVE BLUE</span><br/>
-      <span onClick={() => this.setAction('pink')}>MOVE PINK</span><br/>
-      <span onClick={() => this.setAction('black')}>MOVE BLACK</span><br/>
-      <span onClick={() => this.setAction('white')}>MOVE WHITE</span><br/>
-      <span onClick={() => this.setAction('safehouse')}>TOGGLE SAFEHOUSE</span><br/>
-    </div>);
+      <table >
+        <tbody >
+          <tr>
+            <td >      <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('blue')}>MOVE BLUE</button><br/>
 
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('add')}>ADD AGENT</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('addIncident')}>ADD INCIDENT</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('createAllied')}>MOVE ALLIED</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('createAllied2')}>MOVE ALLIED 2</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('createAllied3')}>MOVE ALLIED 3</button><br/>
+
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('pink')}>MOVE PINK</button><br/>
+            </td>
+            <td>
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('remove')}>REMOVE AGENT</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('removeIncident')}>UNDO INCIDENT</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('createNeutral')}>MOVE NEUTRAL</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('createNeutral2')}>MOVE NEUTRAL 2</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('createNeutral3')}>MOVE NEUTRAL 3</button><br/>
+
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('black')}>MOVE BLACK</button><br/>
+            </td>
+            <td>
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('safehouse')}>TOGGLE SAFEHOUSE</button><br/>
+
+            </td>
+            <td>     
+
+            </td><td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('createSoviet')}>MOVE SOVIET</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('createSoviet2')}>MOVE SOVIET 2</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('createSoviet3')}>MOVE SOVIET 3</button><br/>
+
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('white')}>MOVE WHITE</button><br/>
+            </td>
+            <td>
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('target')}>TOGGLE TARGET</button><br/>
+            </td>
+            <td>     
+
+            </td><td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('removeTeam')}>REMOVE TEAM</button><br/>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+          TOTAL INCIDENTS: {totalIncidents} / 7
+          TOTAL AGENTS: {totalAgents} / 36
+        </div>
+    </div>);
+    
     return (
       <div style={{'width':'2074px','height':'1306px','backgroundImage':'url('+process.env.PUBLIC_URL+'/pandemicmap.jpeg)'}}>
         {actions}
