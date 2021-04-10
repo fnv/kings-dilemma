@@ -619,13 +619,13 @@ export const Pandemic = {
       if (!G.cities[cityId]) {
         return INVALID_MOVE;
       }
-      G.cities[cityId].agents = G.cities[cityId].agents + 1;
+      G.cities[cityId].agents = Math.min(G.cities[cityId].agents + 1, 3);
     },
     removeAgent: (G, ctx, cityId) => {
       if (!G.cities[cityId]) {
         return INVALID_MOVE;
       }
-      G.cities[cityId].agents = G.cities[cityId].agents - 1;
+      G.cities[cityId].agents = Math.max(G.cities[cityId].agents - 1, 0);
     },
   },
 
