@@ -1,13 +1,13 @@
 import { Client } from 'boardgame.io/react';
-import { Pandemic } from './Game';
-import { PandemicBoard } from './Board';
-import { SocketIO } from 'boardgame.io/multiplayer'
+import { Dilemma } from './Game';
+import { DilemmaBoard } from './Board';
+//import { SocketIO } from 'boardgame.io/multiplayer'
 
-const PandemicClient = Client({ numPlayers: 1, game: Pandemic , board: PandemicBoard, multiplayer: SocketIO({server: true ? 'https://pandemic-legacy0.herokuapp.com' : 'localhost:53954'})});
+const DilemmaClient = Client({ numPlayers: 1, game: Dilemma , board: DilemmaBoard});// multiplayer: SocketIO({server: true ? 'https://Dilemma-legacy0.herokuapp.com' : 'localhost:53954'})});
 
 const App = () => (
   <div>
-    <PandemicClient playerID="0" />
+    <DilemmaClient playerID="0" />
   </div>
 );
 

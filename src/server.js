@@ -1,7 +1,7 @@
 // src/server.js
 const { Server } = require('boardgame.io/server');
-const { Pandemic } = require('./Game');
+const { Dilemma } = require('./Game');
 
-const server = Server({ games: [Pandemic] });
+const server = Server({ games: [Dilemma] });
 
 server.run(process.env.PORT);
