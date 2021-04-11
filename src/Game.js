@@ -20,7 +20,7 @@ const PHASE = {
   BOARD: 2,
 }
 
-const turnOrder = [HOUSE.CRANN, HOUSE.OLWYN, HOUSE.BLODYN, HOUSE.SOLAD, HOUSE.DUALAK];
+const turnOrder = [HOUSE.CRANN, HOUSE.OLWYN, HOUSE.DUALAK, HOUSE.SOLAD, HOUSE.BLODYN  ];
 
 function chooseNextPlayer (G, house, pass) {
   const currentIndex = G.turnOrder.indexOf(G.houses[house].id);
@@ -40,11 +40,11 @@ function chooseNextPlayer (G, house, pass) {
 export const Dilemma = {
   setup: () => (
     { 
-      currentDilemma: 'https://i.ibb.co/y4CVF4F/Screen-Shot-2021-04-11-at-5-57-58-PM.png',
+      currentDilemma: 'https://i.ibb.co/NLJhqKq/Screen-Shot-2021-04-11-at-6-54-35-PM.png',
       currentPhase: PHASE.VOTE,
       turnOrder: turnOrder,
       currentPlayer: HOUSE.CRANN,
-      leader: HOUSE.CRANN,
+      leader: HOUSE.OLWYN,
       moderator: HOUSE.CRANN,
       moderatorAvailable: true,
       powerPool: 3,
@@ -63,7 +63,7 @@ export const Dilemma = {
           name: "Olwyn",
           id: HOUSE.OLWYN,
           coins: 10,
-          power: 8,
+          power: 9,
           current_bid: null,
           current_vote_type: null,
           top: '470px',
@@ -83,7 +83,7 @@ export const Dilemma = {
           name: "Solad",
           id: HOUSE.SOLAD,
           coins: 10,
-          power: 8,
+          power: 7,
           current_bid: null,
           current_vote_type: null,
           top: '470px',
@@ -93,7 +93,7 @@ export const Dilemma = {
           name: "Blodyn",
           id: HOUSE.BLODYN,
           coins: 10,
-          power: 8,
+          power: 9,
           current_bid: null,
           current_vote_type: null,
           top: '470px',
