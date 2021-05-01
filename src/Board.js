@@ -114,7 +114,7 @@ export class PandemicBoard extends React.Component {
           height: '100px',
           lineHeight: '14px',
           textAlign: 'center',
-          background: 'rgba(256, 256, 256, 0.15)',
+          background: this.props.G.cities[myName].surveillance > 0 ? 'rgba(256, 0, 0, 0.'+(15*this.props.G.cities[myName].surveillance)+')' : 'rgba(256, 256, 256, 0.15)',
           position: 'absolute',
           top: myTop ?? '10px',
           left: myLeft ?? '10px',
@@ -227,6 +227,7 @@ export class PandemicBoard extends React.Component {
 
             </td>
             <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.props.moves.increaseThreat()}>ADD THREAT</button><br/>
 
             </td><td>     
             <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('createSoviet')}>MOVE SOVIET</button><br/>
@@ -266,6 +267,7 @@ export class PandemicBoard extends React.Component {
     return (
       <div style={{'width':'2074px','height':'1306px','backgroundImage':'url('+process.env.PUBLIC_URL+'/pandemicmap.jpeg)'}}>
         {actions}
+        <div style={{'position':'absolute','width':'38px','height':'38px','top':'231px','left': (1592+(this.props.G.threat*70))+ 'px', 'border': '5px solid red', 'border-radius': '38px'}}></div>
         {div}
         {winner}
       </div>

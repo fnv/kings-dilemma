@@ -23,6 +23,7 @@ const TARGET = {
 export const Pandemic = {
   setup: () => (
     { 
+      threat: 0,
       pawns: {
         blackPawn: "washington",
         bluePawn: "washington",
@@ -711,6 +712,9 @@ export const Pandemic = {
         return INVALID_MOVE;
       }
       G.teams[teamId] = cityId;      
+    },
+    increaseThreat: (G, ctx) => {
+      G.threat = (G.threat + 1) % 6
     },
   },
 
