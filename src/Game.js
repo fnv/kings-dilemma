@@ -286,7 +286,7 @@ export const Pandemic = {
           name: "Kiev",
           region: REGION.EUROPE,
           affiliation: AFFILIATION.SOVIET,
-          surveillance: 1,
+          surveillance: 0,
           safehouse: false,
           agents: 0,
           target: null,
