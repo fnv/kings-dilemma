@@ -20,7 +20,7 @@ const PHASE = {
   BOARD: 2,
 }
 
-const turnOrder = [HOUSE.CRANN, HOUSE.OLWYN, HOUSE.DUALAK, HOUSE.SOLAD, HOUSE.BLODYN  ];
+const turnOrder = [HOUSE.OLWYN, HOUSE.CRANN, HOUSE.DUALAK, HOUSE.SOLAD, HOUSE.BLODYN ];
 
 function chooseNextPlayer (G, house, pass) {
   const currentIndex = G.turnOrder.indexOf(G.houses[house].id);
@@ -43,9 +43,9 @@ export const Dilemma = {
       currentDilemma: 'https://i.ibb.co/NLJhqKq/Screen-Shot-2021-04-11-at-6-54-35-PM.png',
       currentPhase: PHASE.VOTE,
       turnOrder: turnOrder,
-      currentPlayer: HOUSE.CRANN,
+      currentPlayer: HOUSE.OLWYN,
       leader: HOUSE.OLWYN,
-      moderator: HOUSE.CRANN,
+      moderator: HOUSE.BLODYN,
       moderatorAvailable: true,
       powerPool: 3,
       houses: {
@@ -53,51 +53,61 @@ export const Dilemma = {
           name: "Crann",
           id: HOUSE.CRANN,
           coins: 10,
-          power: 8,
+          power: 8, // + money, - money (AGENDA)
           current_bid: null,
           current_vote_type: null,
           top: '470px',
           left: '95px',
+          prestige: 5,
+          crave: 2
         },
         olwyn: {
           name: "Olwyn",
           id: HOUSE.OLWYN,
           coins: 10,
-          power: 9,
+          power: 10, // + welfare (AGENDA), + knowledge
           current_bid: null,
           current_vote_type: null,
           top: '470px',
           left: '95px',
+          prestige: 9,
+          crave: 0,
         },
         dualak: {
           name: "Dualak",
           id: HOUSE.DUALAK,
           coins: 10,
-          power: 8,
+          power: 9, // + money (AGENDA)
           current_bid: null,
           current_vote_type: null,
           top: '470px',
           left: '95px',
+          prestige: 4,
+          crave: 2,
         },
         solad: {
           name: "Solad",
           id: HOUSE.SOLAD,
           coins: 10,
-          power: 7,
+          power: 8, // - influence (AGENDA), - morale (AGENDA), + knowledge (AGENDA), + knowledge
           current_bid: null,
           current_vote_type: null,
           top: '470px',
           left: '95px',
+          prestige: 3,
+          crave: 3,
         },
         blodyn: {
           name: "Blodyn",
           id: HOUSE.BLODYN,
           coins: 10,
-          power: 9,
+          power: 9, // + influence (AGENDA)
           current_bid: null,
           current_vote_type: null,
           top: '470px',
           left: '95px',
+          prestige: 2,
+          crave: 1,
         },
       }
     }
@@ -155,7 +165,7 @@ export const Dilemma = {
       if(!G.houses[house]){
         return INVALID_MOVE;
       }
-      G.houses[house].coins = G.houses[house].coins + 1;
+      G.houses[house].coins = G.houses[house].coins - 1;
     },
     voteAye: (G, ctx, house, bid) => {
       if(!G.houses[house]){
