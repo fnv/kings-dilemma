@@ -1,7 +1,7 @@
 import G from 'glob';
 import React from 'react';
 import { GiMeeple, GiOutbackHat, GiCaravan, GiTargeting, GiCancel, GiHouse } from "react-icons/gi";
-
+import { WidgetLoader, Widget } from 'react-cloudinary-upload-widget'
 
 export class DilemmaBoard extends React.Component {
 
@@ -145,14 +145,26 @@ export class DilemmaBoard extends React.Component {
               }
             </td>
             <td>
-            <button style={{fontSize: '12px', width: '100%'}} onClick={() => {
-var newURL = prompt("What image should be displayed?", "image URL goes here");
-
-if (newURL != null) {
-  this.props.moves.changeURL(newURL)
-}
-              
-              }}>CHANGE IMAGE</button><br/>
+            <Widget
+          sources={['camera']}
+          resourceType={'image'}
+          cloudName={'dgqjwmtyf'}
+          uploadPreset={'lowmd5va-dilemma'} // check that an upload preset exists and check mode is signed or unisgned
+          buttonText={'Upload'}
+          style={{
+                color: 'white',
+                border: 'none',
+                width: '120px',
+                backgroundColor: 'green',
+                borderRadius: '4px',
+                height: '20px'
+              }} // inline styling only or style id='cloudinary_upload_button'
+          onSuccess={(result) => {console.log("success", result); this.props.moves.changeURL(result.info.secure_url);}} // add success callback -> returns result
+          onFailure={(error, result) => {console.log("failure", error, result)}} // add failure callback -> returns 'response.error' + 'response.result'
+          logging={false} // logs will be provided for success and failure messages, 
+          // set to false for production -> default = true
+          use_filename={false}
+        /><br/>
 
             
             </td>
@@ -192,6 +204,8 @@ if (newURL != null) {
 
     return (
       <div>
+        <WidgetLoader />
+        
         {actions}
         {div} 
         {card}       

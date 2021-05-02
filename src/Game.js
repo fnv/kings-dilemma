@@ -29,7 +29,7 @@ function chooseNextPlayer (G, house, pass) {
   if (pass) {
     G.turnOrder.splice(currentIndex, 1);
   }
-  if (G.currentPlayer === G.leader) {
+  if (G.currentPlayer === G.leader || G.turnOrder.length < 1) {
     G.currentPhase = PHASE.BOARD;
     G.currentPlayer = null;
     // resolve the vote!
@@ -49,18 +49,6 @@ export const Dilemma = {
       moderatorAvailable: true,
       powerPool: 3,
       houses: {
-        crann: {
-          name: "Crann",
-          id: HOUSE.CRANN,
-          coins: 10,
-          power: 8, // + money, - money (AGENDA)
-          current_bid: null,
-          current_vote_type: null,
-          top: '470px',
-          left: '95px',
-          prestige: 5,
-          crave: 2
-        },
         olwyn: {
           name: "Olwyn",
           id: HOUSE.OLWYN,
@@ -72,6 +60,18 @@ export const Dilemma = {
           left: '95px',
           prestige: 9,
           crave: 0,
+        },
+        crann: {
+          name: "Crann",
+          id: HOUSE.CRANN,
+          coins: 10,
+          power: 8, // + money, - money (AGENDA)
+          current_bid: null,
+          current_vote_type: null,
+          top: '470px',
+          left: '95px',
+          prestige: 5,
+          crave: 2
         },
         dualak: {
           name: "Dualak",
@@ -237,6 +237,7 @@ export const Dilemma = {
       chooseNextPlayer(G, house, true);
     },
     newVote: (G, ctx) => {
+      G.currentPhase = PHASE.VOTE;
       G.currentPlayer = G.leader;
       let keys = Object.keys(G.houses);
       for(let i = 0; i < keys.length; i++) {
