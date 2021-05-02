@@ -1,6 +1,5 @@
-import G from 'glob';
 import React from 'react';
-import { GiMeeple, GiOutbackHat, GiCaravan, GiTargeting, GiCancel, GiHouse } from "react-icons/gi";
+import { GiMeeple } from "react-icons/gi";
 import { WidgetLoader, Widget } from 'react-cloudinary-upload-widget'
 
 export class DilemmaBoard extends React.Component {
@@ -89,7 +88,7 @@ export class DilemmaBoard extends React.Component {
             <tbody>
               <tr style={{height:'120px'}}>
               <td style={{width:'100px', border: '1px solid #555',}}>
-          Name: {myName} <br/>
+          {myName} <span class='tooltip'><GiMeeple color={this.props.G.houses[myName].color}/><span class='tooltiptext'>Prestige: {this.props.G.houses[myName].prestige}<br/>Crave: {this.props.G.houses[myName].crave}<br/>{this.props.G.houses[myName].agendas}<br/><br/>{this.props.G.houses[myName].achievement1}<br/>{this.props.G.houses[myName].achievement2}<br/>{this.props.G.houses[myName].achievement3}<br/>{this.props.G.houses[myName].story}</span><br/></span>
           Power: {this.props.G.houses[myName].power} <br/>
           Coins: {this.props.G.houses[myName].coins} <br/>
           {(this.props.G.leader === this.props.G.houses[myName].id) ? ('LEADER') : ('')} <br/>
