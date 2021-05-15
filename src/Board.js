@@ -1,5 +1,5 @@
 import React from 'react';
-import { GiMeeple, GiOutbackHat, GiCaravan, GiTargeting, GiCancel, GiHouse } from "react-icons/gi";
+import { GiMeeple, GiOutbackHat, GiCaravan, GiTargeting, GiCancel, GiHouse, GiEyeTarget } from "react-icons/gi";
 
 
 export class PandemicBoard extends React.Component {
@@ -119,6 +119,11 @@ export class PandemicBoard extends React.Component {
           top: myTop ?? '10px',
           left: myLeft ?? '10px',
         }} key={myName} onClick={() => this.onClick(myName)}>
+          <div style={{'display':'flex'}}>
+          {(this.props.G.cities[myName].surveillance > 0) ? (<GiEyeTarget color='white' size='1.5em' style={{'display':'flex','border':'2px solid red', 'borderRadius':'24px', 'background': 'rgba(256, 0, 0, 0.75)'}}/>) : ''}
+          {(this.props.G.cities[myName].surveillance > 1) ? (<GiEyeTarget color='white' size='1.5em' style={{'display':'flex','border':'2px solid red', 'borderRadius':'24px', 'background': 'rgba(256, 0, 0, 0.75)'}}/>) : ''}
+          {(this.props.G.cities[myName].surveillance > 2) ? (<GiEyeTarget color='white' size='1.5em' style={{'display':'flex','border':'2px solid red', 'borderRadius':'24px', 'background': 'rgba(256, 0, 0, 0.75)'}}/>) : ''}
+          </div>
           {(this.props.G.cities[myName].safehouse) ? (<GiHouse color='white' size='1.5em' style={{'border':'2px solid white', 'background': 'rgba(0, 0, 0, 0.45)'}}/>) : ''}
           {(this.props.G.pawns.bluePawn===myName) ? (<GiMeeple color='blue' size='1.5em' style={{'border':'2px solid blue', 'background': 'rgba(256, 256, 256, 0.45)'}}/>) : ''}
           {(this.props.G.pawns.pinkPawn===myName) ? (<GiMeeple color='pink' size='1.5em' style={{'border':'2px solid pink', 'background': 'rgba(0, 0, 0, 0.45)'}}/>) : ''}
@@ -157,18 +162,19 @@ export class PandemicBoard extends React.Component {
 
     let actions = (<div style={{
       border: '1px solid #555',
-      width: '1150px',
-      height: '160px',
+      width: '1350px',
+      height: '180px',
       lineHeight: '28px',
       textAlign: 'center',
       background: 'rgba(256, 256, 256, 0.65)',
       position: 'absolute',
-      top: '55px',
+      top: '25px',
       left: '25px'
     }}>
       <table >
         <tbody >
           <tr>
+            <td><span class="tooltip"><GiMeeple color='blue' size='1.5em' style={{'border':'2px solid blue', 'background': 'rgba(256, 256, 256, 0.45)'}}/><span class="tooltiptext"><img width="1000" alt='' src={process.env.PUBLIC_URL+'/blue.jpg'}/></span></span></td>
             <td >      <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('blue')}>MOVE BLUE</button><br/>
 
             </td>
@@ -194,6 +200,8 @@ export class PandemicBoard extends React.Component {
             </td>
           </tr>
           <tr>
+          <td><span class="tooltip"><GiMeeple color='pink' size='1.5em' style={{'border':'2px solid pink', 'background': 'rgba(0, 0, 0, 0.45)'}}/><span class="tooltiptext"><img width="1000" alt='' src={process.env.PUBLIC_URL+'/pink.jpg'}/></span></span></td>
+
             <td>
             <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('pink')}>MOVE PINK</button><br/>
             </td>
@@ -219,6 +227,8 @@ export class PandemicBoard extends React.Component {
             </td>
           </tr>
           <tr>
+          <td><span class="tooltip"><GiMeeple color='black' size='1.5em' style={{'border':'2px solid black', 'background': 'rgba(256, 256, 256, 0.45)'}}/><span class="tooltiptext"><img width="1000" alt='' src={process.env.PUBLIC_URL+'/black.jpg'}/></span></span></td>
+
             <td>
             <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('black')}>MOVE BLACK</button><br/>
             </td>
@@ -243,6 +253,7 @@ export class PandemicBoard extends React.Component {
             </td>
           </tr>
           <tr>
+          <td><span class="tooltip"><GiMeeple color='white' size='1.5em' style={{'border':'2px solid white', 'background': 'rgba(0, 0, 0, 0.45)'}}/><span class="tooltiptext"><img width="1000" alt='' src={process.env.PUBLIC_URL+'/white.jpg'}/></span></span></td>
             <td>
             <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('white')}>MOVE WHITE</button><br/>
             </td>
@@ -269,6 +280,8 @@ export class PandemicBoard extends React.Component {
         {actions}
         <div style={{'position':'absolute','width':'38px','height':'38px','top':'231px','left': (1592+(this.props.G.threat*70))+ 'px', 'border': '5px solid red', 'border-radius': '38px'}}></div>
         {div}
+        <div style={{'position': 'absolute','top':'1200px','left':'1700px'}}><span class="tooltip" style={{fontSize: '40px', color: 'gray'}}><b>?</b><span class="tooltiptext" style={{'top':'-600px'}}><img width='500px' alt='' src={process.env.PUBLIC_URL + '/actions1.jpg'}/></span></span></div>
+        <div style={{'position': 'absolute','top':'1200px','left':'1750px'}}><span class="tooltip" style={{fontSize: '40px', color: 'gray'}}><b>?</b><span class="tooltiptext" style={{'top':'-600px'}}><img width='500px' alt='' src={process.env.PUBLIC_URL + '/actions2.jpg'}/></span></span></div>
         {winner}
       </div>
     )
