@@ -167,6 +167,12 @@ export class DilemmaBoard extends React.Component {
 
             
             </td>
+            <td>
+            <button style={{fontSize: '12px', width: '100%'}} onClick={() => this.props.moves.addPool()}>ADD POOL POWER</button><br/>
+            </td>
+            <td>
+            <button style={{fontSize: '12px', width: '100%'}} onClick={() => this.props.moves.removeBloodPool()}>TAKE BLOOD MONEY</button><br/>
+            </td>
           </tr>
           <tr>
             <td>
@@ -191,6 +197,13 @@ export class DilemmaBoard extends React.Component {
               : ''
               }
             </td>
+            <td></td>
+            <td>
+            <button style={{fontSize: '12px', width: '100%'}} onClick={() => this.props.moves.removePool()}>REMOVE POOL POWER</button><br/>
+            </td>
+            <td>
+            <button style={{fontSize: '12px', width: '100%'}} onClick={() => this.props.moves.addBloodPool()}>RETURN BLOOD MONEY</button><br/>
+            </td>
           </tr>
           
         </tbody>
@@ -199,7 +212,19 @@ export class DilemmaBoard extends React.Component {
     </div>);
     //      <div style={{'width':'2074px','height':'1306px','backgroundImage':'url('+process.env.PUBLIC_URL+'/Dilemmamap.jpeg)'}}>
 
-    let card = <div style={{position:'absolute', top:'80px', left: '400px'}}><div>Current Power Pool: {this.props.G.powerPool}</div><img alt='' style={{width:'400px'}} src={this.props.G.currentDilemma}></img></div>
+    let card = <div style={{position:'absolute', top:'80px', left: '400px'}}>
+      <div style={{fontSize:'14px', color:'gray'}}>
+        <span class='tooltip' style={{margin:'5px'}}>Opportunist <span class='tooltiptext'><img alt='' src={process.env.PUBLIC_URL+'/opportunist.png'}/></span></span>
+        <span class='tooltip' style={{margin:'5px'}}>Opulent <span class='tooltiptext'><img alt='' src={process.env.PUBLIC_URL+'/opulent.png'}/></span></span>
+        <span class='tooltip' style={{margin:'5px'}}>Moderate <span class='tooltiptext'><img alt='' src={process.env.PUBLIC_URL+'/moderate.png'}/></span></span>
+        <span class='tooltip' style={{margin:'5px'}}>Greedy <span class='tooltiptext'><img alt='' src={process.env.PUBLIC_URL+'/greedy.png'}/></span></span>
+        <span class='tooltip' style={{margin:'5px'}}>Rebel <span class='tooltiptext'><img alt='' src={process.env.PUBLIC_URL+'/rebel.png'}/></span></span>
+        <span class='tooltip' style={{margin:'5px'}}>Extremist <span class='tooltiptext'><img alt='' src={process.env.PUBLIC_URL+'/extremist.png'}/></span></span>
+      </div>
+      <br/>
+      <div>Current Power Pool: {this.props.G.powerPool}</div>
+      <div class='tooltip'>Current Blood Money Pool: {this.props.G.bloodPool} <span class='tooltiptext'>When passing, a player may take one coin from this pool. If this pool is empty at the end of the game, the scoring from the coin ranking is reduced by 2.</span></div>
+      <div style={{marginTop: '5px'}}><img alt='' style={{width:'400px'}} src={this.props.G.currentDilemma}></img></div></div>
 
     return (
       <div>

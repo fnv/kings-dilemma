@@ -48,6 +48,7 @@ export const Dilemma = {
       moderator: HOUSE.BLODYN,
       moderatorAvailable: true,
       powerPool: 3,
+      bloodPool: 8,
       houses: {
         olwyn: {
           name: "Olwyn",
@@ -340,7 +341,19 @@ export const Dilemma = {
     },
     changeURL: (G, ctx, url) => {
       G.currentDilemma = url;
-    }
+    },
+    addPool: (G, ctx) => {
+      G.powerPool = G.powerPool + 1;
+    },
+    removePool: (G, ctx) => {
+      G.powerPool = G.powerPool - 1;
+    },
+    addBloodPool: (G, ctx) => {
+      G.bloodPool = G.bloodPool + 1;
+    },
+    removeBloodPool: (G, ctx) => {
+      G.bloodPool = G.bloodPool - 1;
+    },
   },
 
   endIf: (G, ctx) => {
