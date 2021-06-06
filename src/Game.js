@@ -206,9 +206,12 @@ export const Dilemma = {
         return INVALID_MOVE;
       }
       if(isNaN(bid) || bid < 0) {
-        return INVALID_MOVE;
+        bid = 0;
       }
       if(G.houses[house].current_bid + bid > G.houses[house].power) {
+        return INVALID_MOVE;
+      }
+      if(G.houses[house].current_bid === null && bid === 0){
         return INVALID_MOVE;
       }
       // condition for "passing" after a bid
@@ -228,9 +231,12 @@ export const Dilemma = {
         return INVALID_MOVE;
       }
       if(isNaN(bid) || bid < 0) {
-        return INVALID_MOVE;
+        bid = 0;
       }
       if(G.houses[house].current_bid + bid > G.houses[house].power) {
+        return INVALID_MOVE;
+      }
+      if(G.houses[house].current_bid === null && bid === 0){
         return INVALID_MOVE;
       }
       G.houses[house].current_vote_type = VOTE_TYPE.NAY;

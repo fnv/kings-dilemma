@@ -96,10 +96,10 @@ export class DilemmaBoard extends React.Component {
           {(this.props.G.currentPlayer === this.props.G.houses[myName].id) ? 'CURRENT PLAYER' : ''} <br/>
           </td>
           <td  style={{width:'150px'}}>
-            <button style={{fontSize: '12px', width: '100%'}} onClick={() => this.setAction('voteAye')}>AYE</button><br/>
-            <button style={{fontSize: '12px', width: '100%'}} onClick={() => this.setAction('voteNay')}>NAY</button><br/>
-            <button style={{fontSize: '12px', width: '100%'}} onClick={() => this.setAction('passPower')}>PASS (POWER)</button><br/>
-            <button style={{fontSize: '12px', width: '100%'}} onClick={() => this.setAction('passModerator')}>PASS (MODERATOR)</button><br/>
+            <button style={{fontSize: '12px', width: '100%'}} disabled={(this.props.G.houses[myName].current_vote_type === null || this.props.G.houses[myName].current_vote_type === 1) ? false : true } onClick={() => this.setAction('voteAye')}>AYE</button><br/>
+            <button style={{fontSize: '12px', width: '100%'}} disabled={(this.props.G.houses[myName].current_vote_type === null || this.props.G.houses[myName].current_vote_type === 2) ? false : true } onClick={() => this.setAction('voteNay')}>NAY</button><br/>
+            <button style={{fontSize: '12px', width: '100%'}} disabled={(this.props.G.houses[myName].current_vote_type === null || this.props.G.houses[myName].current_vote_type === 3) ? false : true } onClick={() => this.setAction('passPower')}>PASS (POWER)</button><br/>
+            <button style={{fontSize: '12px', width: '100%'}} disabled={((this.props.G.houses[myName].current_vote_type === null && this.props.G.moderatorAvailable) || this.props.G.houses[myName].current_vote_type === 4) ? false : true } onClick={() => this.setAction('passModerator')}>PASS (MODERATOR)</button><br/>
           </td>
           <td  style={{width:'100px', height:'50px', border: '1px solid #555',}}>
             {this.props.G.houses[myName].current_vote_type ? voteDivs[this.props.G.houses[myName].current_vote_type - 1] : <span>Bid: <input style={{width:'15px'}} id={myName + '-bid'}></input></span>}
