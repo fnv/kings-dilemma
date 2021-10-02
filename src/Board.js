@@ -1,5 +1,5 @@
 import React from 'react';
-import { GiMeeple, GiOutbackHat, GiCaravan, GiTargeting, GiCancel, GiHouse, GiEyeTarget } from "react-icons/gi";
+import { GiMeeple, GiOutbackHat, GiCaravan, GiTargeting, GiCancel, GiHouse, GiEyeTarget, GiCube, GiRunningShoe } from "react-icons/gi";
 
 
 export class PandemicBoard extends React.Component {
@@ -19,6 +19,12 @@ export class PandemicBoard extends React.Component {
     if (move === 'remove') {
       this.props.moves.removeAgent(city);
     }
+    if (move === 'addDisease') {
+      this.props.moves.addDisease(city);
+    }
+    if (move === 'removeDisease') {
+      this.props.moves.removeDisease(city);
+    }
     if (move === 'blue') {
       this.props.moves.moveBluePawn(city);
     }
@@ -33,6 +39,9 @@ export class PandemicBoard extends React.Component {
     }
     if (move === 'safehouse') {
       this.props.moves.toggleSafehouse(city);
+    }
+    if (move === 'pursuit') {
+      this.props.moves.togglePursuit(city);
     }
     if (move === 'target') {
       this.props.moves.toggleTarget(city);
@@ -125,6 +134,8 @@ export class PandemicBoard extends React.Component {
           {(this.props.G.cities[myName].surveillance > 2) ? (<GiEyeTarget color='white' size='1.5em' style={{'display':'flex','border':'2px solid red', 'borderRadius':'24px', 'background': 'rgba(256, 0, 0, 0.75)'}}/>) : ''}
           </div>
           {(this.props.G.cities[myName].safehouse) ? (<GiHouse color='white' size='1.5em' style={{'border':'2px solid white', 'background': 'rgba(0, 0, 0, 0.45)'}}/>) : ''}
+          {(this.props.G.cities[myName].infiltration) ? (<GiHouse color='black' size='1.5em' style={{'border':'2px solid white', 'background': 'rgba(256, 256, 256, 0.45)'}}/>) : ''}
+          {(this.props.G.cities[myName].pursuit) ? (<GiRunningShoe color='cyan' size='1.5em' style={{'border':'2px solid blue', 'background': 'rgba(0, 0, 0, 0.45)'}}/>) : ''}
           {(this.props.G.pawns.bluePawn===myName) ? (<GiMeeple color='blue' size='1.5em' style={{'border':'2px solid blue', 'background': 'rgba(256, 256, 256, 0.45)'}}/>) : ''}
           {(this.props.G.pawns.pinkPawn===myName) ? (<GiMeeple color='pink' size='1.5em' style={{'border':'2px solid pink', 'background': 'rgba(0, 0, 0, 0.45)'}}/>) : ''}
           {(this.props.G.pawns.whitePawn===myName) ? (<GiMeeple color='white' size='1.5em' style={{'border':'2px solid white', 'background': 'rgba(0, 0, 0, 0.45)'}}/>) : ''}
@@ -141,6 +152,7 @@ export class PandemicBoard extends React.Component {
           <br/>
           {Array(this.props.G.cities[myName].incidents).fill(0).map((_, index) => <span key={'incident-'+index} style={{fontSize: '40px', color: 'red'}}><b>!</b></span>)}
           {Array(this.props.G.cities[myName].agents).fill(0).map((_, index) => <GiOutbackHat key={'hat-'+index} color='red' size='1.5em' />)}
+          {Array(this.props.G.cities[myName].disease).fill(0).map((_, index) => <GiCube key={'cube-'+index} color='green' size='1.5em' />)}
           <br/>
           {(this.props.G.cities[myName].target === 1) ? (<GiTargeting color='red' size='2.5em' style={{'border':'2px solid white', 'background': 'rgba(256, 256, 256, 0.45)'}}/>) : ''}
           {(this.props.G.cities[myName].target === 2) ? (<GiCancel color='gray' size='2.5em' style={{'border':'2px solid white', 'background': 'rgba(256, 256, 256, 0.45)'}}/>) : ''}
@@ -261,9 +273,17 @@ export class PandemicBoard extends React.Component {
             <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('target')}>TOGGLE TARGET</button><br/>
             </td>
             <td>     
-
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('pursuit')}>TOGGLE PURSUIT</button><br/>
             </td><td>     
             <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('removeTeam')}>REMOVE TEAM</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('addDisease')}>ADD DISEASE</button><br/>
+
+            </td>
+            <td>     
+            <button style={{fontSize: '20px', width: '100%'}} onClick={() => this.setAction('removeDisease')}>REMOVE DISEASE</button><br/>
 
             </td>
           </tr>
