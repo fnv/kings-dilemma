@@ -326,7 +326,7 @@ export const Pandemic = {
           surveillance: 0,
           safehouse: false,
           agents: 0,
-          disease: 0,
+          disease: 1,
           infiltration: false,
           target: null,
           pursuit: false,
